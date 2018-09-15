@@ -1,0 +1,152 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>CODE1230 ASSIGNMENT2 
+</title>
+<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+<!--jQuery (necessary for Bootstrap's JavaScript plugins)-->
+<script src="js/jquery.min.js"></script>
+ <!-- Custom Theme files -->
+<link href="css/style.css" rel='stylesheet' type='text/css' />
+<!--Custom Theme files-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</script>
+
+<!--start-smoth-scrolling-->
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+		
+		<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+				});
+			});
+		</script>
+<!--start-smoth-scrolling-->
+<!-- Map -->
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.48.0/mapbox-gl.js'></script>
+	<script src='./js/data.js'></script>
+	<script src='./js/data1.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.48.0/mapbox-gl.css' rel='stylesheet' />
+</head>
+<body>
+<!--header-->
+	<div class="header">
+		<div class="header-top">
+			<div class="container">
+				<div class="logo">
+					<a href="index.html"></a>
+				</div>
+			<!--top-nav-->
+			 <nav class="top-nav">
+				
+						</nav>
+						<div class="clearfix"> </div>
+
+				<div class="clearfix"> </div>
+		</div>
+	</div>
+		<!--banner-->
+			<div class="banner" >
+				<div class="container" style='width:1100px; height: 250px;' >
+					<div class="col-xs-20">
+						<div class="banner-info">
+						 	<h1>Labour Force Status by Age by Sex
+</h1>
+<!-- 						 	<h2>z5210814 
+jianlun fu</h2> -->
+						
+
+						</div>
+					</div>
+			 	</div>
+			</div>
+		<!--Features-->
+		<div class="Features" id="feature">
+					
+			<div class="container">
+
+
+<div style="display:flex;justify-content:center">
+	<div id='map' style='width: 45%; height: 200px;margin-right: 20px'></div>
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoiamstbGluIiwiYSI6ImNqbHFubWp0NDB2OTEza29ldGNxOWx5NzIifQ.m_4BN0Gn4zFIxpdlJgQ7-Q';
+var map = new mapboxgl.Map({
+    container: 'map', // container id
+    style: 'mapbox://styles/mapbox/light-v9', // stylesheet location
+    center: [151.004105,-33.813002], // starting position [lng, lat]
+    pitch:45,
+    bearing:-17.6,
+    zoom: 9 // starting zoom
+});
+map.on('load',
+function() {
+    map.addLayer({
+        "id": "data",
+        "type": "fill-extrusion",
+        "source": {
+            'type': 'geojson',
+            'data': data
+        },
+        'paint': {
+            'fill-extrusion-color': {
+                'property': '2016Census_G43A_NSW_POA_M_Emp_FullT_20_24',
+                "stops": [[0, 'white'], [50, 'orange']]
+            },
+            'fill-extrusion-height': {
+                'property': 'difference',
+                "stops": [[0.2, 0], [1, 30000]]
+            },
+            'fill-extrusion-opacity':0.8
+        }
+    });
+});
+</script>
+
+<div id='map2' style='width: 45%; height: 200px;margin-left: 20px'></div>
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoiamstbGluIiwiYSI6ImNqbHFubWp0NDB2OTEza29ldGNxOWx5NzIifQ.m_4BN0Gn4zFIxpdlJgQ7-Q';
+var map2 = new mapboxgl.Map({
+    container: 'map2', // container id
+    style: 'mapbox://styles/mapbox/light-v9', // stylesheet location
+    center: [151.004105,-33.813002], // starting position [lng, lat]
+    pitch:45,
+    bearing:-17.6,
+    zoom: 9 // starting zoom
+});
+map2.on('load',
+function() {
+    map2.addLayer({
+        "id": "data",
+        "type": "fill-extrusion",
+        "source": {
+            'type': 'geojson',
+            'data': data1
+        },
+        'paint': {
+            'fill-extrusion-color': {
+                'property': '2016Census_G43A_AUS_POA_M_Emp_FullT_20_24',
+                "stops": [[0, 'white'], [50, '#4C6567']]
+            },
+            'fill-extrusion-height': {
+                'property': 'difference',
+                "stops": [[0.2, 0], [1, 30000]]
+            },
+            'fill-extrusion-opacity':0.8
+        }
+    });
+});
+</script>
+</div>
+</div>
+					
+
+
+			<div class="col-md-20 phone-text" style="width: 100vw;">
+					<p style="width: 80vw;margin:30px auto;text-align: center;">For a long time before, it is a conclusion that men are better than women. Because men’s physical fitness and physical strength are mostly stronger than women’s, and when modern cities have not developed, they have been physically active. It is a symbol of the labor force, and women will also have a further decline in the labor force due to the influence of the physiological period and the birth period. Therefore, the labor situation assigned by sex ten years ago has always been higher for men than for women. With the gradual development of modern cities, the pace of life in the city is accelerating, and the labor force is no longer limited to physical work such as moving bricks. Today's women perform very well in various professional fields, which is not inferior to men, and even some are still overtaken. Male. Let us first analyze the labor situation of the entire aus in terms of gender distribution in 2016. From the figure we can see that the entire aus gender-distributed labor situation accounts for about 60%, mainly concentrated in coastal areas. The gender-distributed labor situation in the inland areas is not so friendly, such as the central area of ??aus to northern territory According to my preliminary analysis, this area is inland, so the economy may not be so developed relative to coastal cities, and the construction of modern cities is not perfect, which has led to this situation. Let's take a look at those places where the labor force is better distributed by gender, such as nsw. From the figure, we can see that the labor situation assigned by sex in nsw accounts for about 80%, which is a very high proportion. However, it is mainly concentrated in the central part of nsw, and the labor distribution by sex is not good in places relatively close to inland, such as broken hill. So I came to the conclusion that the gender-distributed labor force in the coastal areas is better than the inland areas.</p>
+			</div>
+
+</body>
+</html>
